@@ -3,6 +3,7 @@ package com.example.presidentcountryi.model;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.*;
+import javax.swing.plaf.IconUIResource;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -14,6 +15,13 @@ public class Country {
     private String countryCode;
 
     private String countryName;
+
+    public Country() {};
+
+    public Country(String countryCode, String name) {
+        this.countryCode = countryCode;
+        this.countryName = name;
+    }
 
     @OneToMany
     @JoinColumn(name = "countrycode")
