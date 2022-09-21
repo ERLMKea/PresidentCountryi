@@ -1,5 +1,7 @@
 package com.example.presidentcountryi.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 
 @Entity
