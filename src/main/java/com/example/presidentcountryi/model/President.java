@@ -1,9 +1,6 @@
 package com.example.presidentcountryi.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class President {
@@ -14,6 +11,18 @@ public class President {
 
     private String firstName;
     private String lastName;
+
+    @ManyToOne
+    @JoinColumn(name = "countrycode")
+    private Country country;
+
+    public Country getCountry() {
+        return country;
+    }
+
+    public void setCountry(Country country) {
+        this.country = country;
+    }
 
     public int getId() {
         return id;
